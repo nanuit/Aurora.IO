@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Threading;
@@ -12,7 +13,7 @@ namespace Aurora.IO
     public class Serial
     {
         private static SerialPort m_SerialPort;
-        public System.IO.Ports.SerialPort SerialPort
+        public SerialPort SerialPort
         {
             get { return m_SerialPort; }
             set { m_SerialPort = value; }

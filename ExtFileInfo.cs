@@ -6,10 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.WindowsAPICodePack.Shell;
 using NLog;
-
+//TODO: Prüfung auf realisierung in .net5+
 namespace Aurora.IO
-{
-    
+{    
     public class ExtFileInfo
     {
         private static Logger m_Log = LogManager.GetCurrentClassLogger();
@@ -19,7 +18,7 @@ namespace Aurora.IO
         public object PropertyValue { get; set; }
         public string PropertyKey { get; set; }
         #endregion
-        
+
         public static List<ExtFileInfo> GetExtendedFileInfo(string fileWithPath)
         {
             List<ExtFileInfo> retVal = new List<ExtFileInfo>();
@@ -32,7 +31,7 @@ namespace Aurora.IO
                     newInfo.PropertyKey = prop.PropertyKey.ToString();
                     newInfo.PropertyName = prop.CanonicalName;
                     newInfo.PropertyValue = prop.ValueAsObject;
-                    
+
                     string value = string.Empty;
                     if (prop.ValueType == typeof(string[]))
                     {
