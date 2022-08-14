@@ -27,8 +27,8 @@
 	</PropertyGroup>
 	<ItemGroup Condition="'$(TargetFramework)' != 'net48'">
 		<Compile Remove="ExtFileInfo.cs" />
-		<Compile Remove="NamedPipe\Client.cs" />
-		<Compile Remove="NamedPipe\Server.cs" />
+		<!--<Compile Remove="NamedPipe\Client.cs" />
+		<Compile Remove="NamedPipe\Server.cs" />-->
 	</ItemGroup>	
 	<ItemGroup>
 		<None Include="..\Common\nuget.png">

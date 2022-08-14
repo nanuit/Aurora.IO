@@ -45,6 +45,7 @@ namespace Aurora.IO.NamedPipe
             {
                 m_Log.Warn($">> Start");
                 m_ToRun = true;
+                //TODO: Plattformindependend solution
                 m_Server = new NamedPipeServerStream(m_PipeName, PipeDirection.In, 1, PipeTransmissionMode.Message);
                 Task.Run(() => Worker(m_Server));
                 retVal = true;
