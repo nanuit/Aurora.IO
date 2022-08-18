@@ -5,7 +5,7 @@
 		<AssemblyName>Aurora.IO</AssemblyName>
 		<RootNamespace>Aurora.IO</RootNamespace>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<VersionPrefix>1.0.4</VersionPrefix>
+		<VersionPrefix>1.0.5</VersionPrefix>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<ImplicitUsings>disable</ImplicitUsings>
@@ -13,9 +13,10 @@
 		<Description>classes supporting IO operations</Description>
 		<Copyright>Nanuit(c) 2022</Copyright>
 		<PackageIcon>nuget.png</PackageIcon>
-		<PackageReleaseNotes>Added .net5.0 .net6.0 support</PackageReleaseNotes>
+		<PackageReleaseNotes>GetCustomAssemblyLinkDateUtc and GetCustomAssemblyLinkDateLocal added</PackageReleaseNotes>
 		<UseWindowsForms>false</UseWindowsForms>
 		<UseWpf>false</UseWpf>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
