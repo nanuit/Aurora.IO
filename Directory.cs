@@ -4,6 +4,21 @@ namespace Aurora.IO
 {
     public class Directory
     {
+        /// <summary>
+        /// Ensure that the directory part of the given filename with path is existing, created if needed
+        /// </summary>
+        /// <param name="fileDirectory">full path to file to create the directory for</param>
+        /// <returns>true if the directory had to be created</returns>
+        public static bool EnsureFileDirectory(string fileDirectory)
+        {
+            bool retVal = false;
+            if (!System.IO.Directory.Exists(PathLinuxed.GetDirectoryName(fileDirectory)))
+            {
+                System.IO.Directory.CreateDirectory(PathLinuxed.GetDirectoryName(fileDirectory));
+                retVal = true;
+            }
+            return (retVal);
+        }
         public static bool EnsureDirectory(string directory)
         {
             bool retVal = false;
