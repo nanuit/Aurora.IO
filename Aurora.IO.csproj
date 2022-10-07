@@ -18,6 +18,7 @@
 		<UseWpf>false</UseWpf>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<Nullable>enable</Nullable>
+		<LangVersion>8.0</LangVersion>
 	</PropertyGroup>
 
 	<PropertyGroup>
