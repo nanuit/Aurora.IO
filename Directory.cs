@@ -19,18 +19,23 @@ namespace Aurora.IO
             }
             return (retVal);
         }
+        /// <summary>
+        /// check the existence of the directory <paramref name="directory"/> and creates it if not
+        /// </summary>
+        /// <param name="directory"></param>
+        /// <returns>true if the directory has been created</returns>
         public static bool EnsureDirectory(string directory)
         {
             bool retVal = false;
-            if (!System.IO.Directory.Exists(PathLinuxed.GetDirectoryName(directory)))
+            if (!System.IO.Directory.Exists(directory))
             {
-                System.IO.Directory.CreateDirectory(PathLinuxed.GetDirectoryName(directory));
+                System.IO.Directory.CreateDirectory(directory);
                 retVal = true;
             }
             return (retVal);
         }
         /// <summary>
-        /// Ensure that the directory parameter end with the given subdirectory and that the directory exists
+        /// Ensure the existence of a sub directory <paramref name="subDirectory" />  in the directory <paramref name="directory"/>
         /// </summary>
         /// <param name="directory">directory to be checked for subdirectory and created if not exists</param>
         /// <param name="subDirectory"></param>
