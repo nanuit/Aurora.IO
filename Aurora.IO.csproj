@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net48;net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net48;net5.0;net6.0;net7.0</TargetFrameworks>
 		<AssemblyName>Aurora.IO</AssemblyName>
 		<RootNamespace>Aurora.IO</RootNamespace>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<VersionPrefix>1.0.8</VersionPrefix>
+		<VersionPrefix>1.0.9</VersionPrefix>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Authors>Nanuit</Authors>
 		<Description>classes supporting IO operations</Description>
 		<Copyright>Nanuit(c) 2022</Copyright>
 		<PackageIcon>nuget.png</PackageIcon>
-		<PackageReleaseNotes>added SerialPortExtension methods</PackageReleaseNotes>
+		<PackageReleaseNotes>added net7.0 support</PackageReleaseNotes>
 		<UseWindowsForms>false</UseWindowsForms>
 		<UseWpf>false</UseWpf>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -22,7 +22,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<LangVersion>8.0</LangVersion>
+		<LangVersion>default</LangVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -42,15 +42,16 @@
 		</None>
 	</ItemGroup>
 	<ItemGroup>		
-		<PackageReference Include="NLog" Version="5.0.1" />		
+		<PackageReference Include="NLog" Version="5.1.2" />		
+    
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net48'">
-		<PackageReference Include="ServiceStack.Text" Version="6.2.0" />
+		<PackageReference Include="ServiceStack.Text" Version="6.7.0" />
 		<PackageReference Include="Microsoft-Windows10-APICodePack-Shell" Version="1.1.8" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net5.0' or '$(TargetFramework)' == 'net6.0'">
-		<PackageReference Include="ServiceStack.Text.Core" Version="6.2.0" />
-		<PackageReference Include="System.IO.Ports" Version="6.0.0" />		
-	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' != 'net48'">
+    <PackageReference Include="ServiceStack.Text.Core" Version="6.7.0" />
+    <PackageReference Include="System.IO.Ports" Version="7.0.0" />
+  </ItemGroup>
 
 </Project>
