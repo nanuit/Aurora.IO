@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.WindowsAPICodePack.Shell;
 using NLog;
-//TODO: Prüfung auf realisierung in .net5+
+
 namespace Aurora.IO
 {    
     public class ExtFileInfo
