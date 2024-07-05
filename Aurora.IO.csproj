@@ -49,12 +49,20 @@
     
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net48'">
-		<PackageReference Include="ServiceStack.Text" Version="6.9.0" />
+		<PackageReference Include="ServiceStack.Text" Version="8.3.0" />
 		<PackageReference Include="Microsoft-Windows10-APICodePack-Shell" Version="1.1.8" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' != 'net48'">
-    <PackageReference Include="ServiceStack.Text.Core" Version="6.9.0" />
-    <PackageReference Include="System.IO.Ports" Version="7.0.0" />
-  </ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+	  <PackageReference Include="ServiceStack.Text.Core" Version="8.3.0" />
+	  <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+	  <PackageReference Include="ServiceStack.Text.Core" Version="8.3.0" />
+	  <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+	  <PackageReference Include="ServiceStack.Text.Core" Version="8.3.0" />
+	  <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+	</ItemGroup>
 
 </Project>
